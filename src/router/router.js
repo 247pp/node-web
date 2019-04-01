@@ -3,7 +3,10 @@ export default [
   {
     path: '/',
     name: 'login',
-    component: import('@/views/login/login.vue')
+    meta: {
+      keepAlive: false // 是否缓存
+    },
+    component: () => import('@/views/login/login.vue')
   },
   {
     path: '/about',

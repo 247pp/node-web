@@ -4,6 +4,8 @@ import router from './router/index'
 import store from './store/store'
 import axios from 'axios'
 import functions from '@/libs/functions'
+import '@/libs/api.style.less'
+import './index.less'
 
 // 注册全局方法
 Vue.use(functions)
