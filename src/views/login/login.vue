@@ -1,6 +1,10 @@
 <template>
   <div class="login-lyp">
-    <div class="wrapper-bg" :style="styleJson"></div>
+    <div class="wrapper-bg" :style="styleJson">
+      <span @click="onPushRoute">
+        啊哈哈
+      </span>
+    </div>
   </div>
 </template>
 
@@ -19,6 +23,12 @@ export default {
   computed: {},
   filters: {},
   watch: {},
+  methods: {
+    onPushRoute () {
+      this.$router.push({ name: 'about' })
+      // this.$Loading.start()
+    }
+  },
   mounted () {
     this.$nextTick(() => {
       binbgAjax().then((res) => {

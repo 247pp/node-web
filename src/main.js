@@ -4,11 +4,14 @@ import router from './router/index'
 import store from './store/store'
 import axios from 'axios'
 import functions from '@/libs/functions'
+import iView from 'iview'
 import '@/libs/api.style.less'
 import './index.less'
 
 // 注册全局方法
 Vue.use(functions)
+// 引入iview组件库
+Vue.use(iView)
 
 Vue.config.productionTip = false
 
