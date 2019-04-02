@@ -7,4 +7,37 @@
   width: 100%;
   height: 100vh;
 }
+.login-lyp .wrapper-bg .login_box {
+  width: 350px;
+  border-radius: 15px;
+  padding: 35px;
+  color: #EEE;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.login-lyp .wrapper-bg .login_box .ivu-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.login-lyp .wrapper-bg .login_box .ivu-form .ivu-form-item,
+.login-lyp .wrapper-bg .login_box .ivu-form .ivu-form-item-content {
+  margin-right: 0;
+  width: 100%;
+}
+.login-lyp .wrapper-bg .login_box .login_title {
+  text-align: center;
+  font: 20px "microsoft yahei", Helvetica, Tahoma, Arial, "Microsoft jhengHei", sans-serif;
+  color: #FFFFFF;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 0 35px 0;
+}
+.login-lyp .wrapper-bg .login_box button {
+  width: 100%;
+  margin-top: 10px;
+}
 /*# sourceMappingURL=login.css.map */

@@ -5,6 +5,7 @@ import store from './store/store'
 import axios from 'axios'
 import functions from '@/libs/functions'
 import iView from 'iview'
+import 'iview/dist/styles/iview.css'
 import '@/libs/api.style.less'
 import './index.less'
 
