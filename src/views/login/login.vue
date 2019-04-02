@@ -1,6 +1,7 @@
 <template>
   <div class="login-lyp">
-    <div class="wrapper-bg" :style="styleJson">
+    <div class="wrapper-bg">
+      <img :src="BGIMG" alt="">
       <div class="login_box">
         <h3 class="login_title">
           主人请登录
@@ -28,13 +29,15 @@
 
 <script>
 import { binbgAjax } from '@/api/login.js'
+import BGIMG from '@/assets/bg.jpg'
 
 export default {
   name: 'login',
   data () {
     return {
+      BGIMG: '',
       styleJson: {
-        backgroundImage: ''
+        backgroundImage: 'url(../../assets/bg.jpg)'
       },
       loginParams: {},
       loginRules: {
@@ -55,8 +58,10 @@ export default {
       binbgAjax().then((res) => {
         console.log(res, '登录界面')
         if (res.data.respCode === '0000') {
-          this.styleJson.backgroundImage = `url(https://cn.bing.com/${res.data.data.images[0].url})`
+          this.BGIMG = `https://cn.bing.com/${res.data.data.images[0].url}`
+          return false
         }
+        this.BGIMG = BGIMG
       })
     }
   },
