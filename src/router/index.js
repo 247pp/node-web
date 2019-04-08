@@ -4,7 +4,7 @@ import routes from './router'
 import iView from 'iview'
 
 Vue.use(Router)
-Vue.use(iView)
+// Vue.use(iView)
 const router = new Router({
   mode: 'history',
   // base: process.env.BASE_URL,

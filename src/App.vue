@@ -5,4 +5,7 @@
 </template>
 
 <style lang="less">
+body, html {
+  overflow: hidden;
+}
 </style>

@@ -9,11 +9,11 @@ import 'iview/dist/styles/iview.css'
 import '@/libs/api.style.less'
 import './index.less'
 
-// 注册全局方法
-Vue.use(functions)
 // 引入iview组件库
 Vue.use(iView)
 
+// 注册全局方法
+Vue.use(functions)
 Vue.config.productionTip = false
 
 // 全局使用axios
