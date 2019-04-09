@@ -14,7 +14,22 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   // console.log(iView)
   iView.LoadingBar.start()
-  next()
+  if (to.path !== '/') {
+    if (!sessionStorage.login) {
+      next({ redirect: '/' })
+    } else {
+      next()
+    }
+  } else {
+    if (sessionStorage.login) {
+      next({ path: '/home' })
+      iView.LoadingBar.finish()
+      console.log('已登录')
+    } else {
+      next()
+    }
+  }
+  console.log(to, from, '路由守卫')
 })
 
 router.afterEach(route => {

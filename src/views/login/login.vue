@@ -79,7 +79,9 @@ export default {
         this.loading = false
         if (res.data.respCode === '0000') {
           if (res.data.data.isSuccess) {
-            this.$router.replace({ name: 'about' })
+            sessionStorage.setItem('login', '{ isLogin: true }')
+            this.$router.replace({ name: 'home' })
+            console.log('登录成功')
           } else {
             this.$Message.error({
               content: '账号或密码错误！',
