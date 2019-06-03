@@ -8,17 +8,17 @@
         </h3>
         <Form ref="formInline" :model="loginParams" :rules="loginRules" inline>
           <FormItem prop="username">
-            <Input type="text" v-model="loginParams.username" placeholder="Username">
+            <Input type="text" :maxlength="22" v-model="loginParams.username" placeholder="Username">
               <Icon type="ios-person-outline" slot="prepend"></Icon>
             </Input>
           </FormItem>
           <FormItem prop="password">
-            <Input type="password" v-model="loginParams.password" placeholder="Password">
+            <Input type="password" :maxlength="16" v-model="loginParams.password" placeholder="Password">
               <Icon type="ios-lock-outline" slot="prepend"></Icon>
             </Input>
           </FormItem>
         </Form>
-        <Checkbox :value="false">
+        <Checkbox v-model="passwordBfalse" :value="passwordBfalse">
           记住密码
         </Checkbox>
         <Button type="primary" :loading="loading" @click="btnLoginOnClick('formInline')">
@@ -38,11 +38,16 @@ export default {
   name: 'login',
   data () {
     return {
+      // 是否记住密码
+      passwordBfalse: false,
       // 按钮的加载事件
       loading: false,
       BGIMG: '',
       // 登录参数
-      loginParams: {},
+      loginParams: {
+        username: '',
+        password: ''
+      },
       // 校验form
       loginRules: {
         username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
@@ -80,8 +85,12 @@ export default {
         if (res.data.respCode === '0000') {
           if (res.data.data.isSuccess) {
             sessionStorage.setItem('login', '{ isLogin: true }')
+            if (this.passwordBfalse) {
+              localStorage.setItem('checkoutUser', JSON.stringify(this.loginParams))
+            } else {
+              localStorage.removeItem('checkoutUser')
+            }
             this.$router.replace({ name: 'home' })
-            console.log('登录成功')
           } else {
             this.$Message.error({
               content: '账号或密码错误！',
@@ -101,12 +110,26 @@ export default {
           this.login()
         }
       })
+    },
+    checkoutPassword () {
+      console.log(localStorage, '查询本地缓存')
+      if (localStorage.checkoutUser) {
+        let userInfo = JSON.parse(localStorage.checkoutUser)
+        this.loginParams.username = userInfo.username
+        this.loginParams.password = userInfo.password
+        this.passwordBfalse = true
+        this.$set(this.$data, 'loginParams', this.loginParams)
+      } else {
+        this.passwordBfalse = false
+      }
     }
   },
   mounted () {
     this.$nextTick(() => {
       // 调用背景
       this.binbgAjax()
+      // 调用是否记住密码
+      this.checkoutPassword()
     })
   }
 }

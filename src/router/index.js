@@ -16,7 +16,7 @@ router.beforeEach((to, from, next) => {
   iView.LoadingBar.start()
   if (to.path !== '/') {
     if (!sessionStorage.login) {
-      next({ redirect: '/' })
+      next({ replace: true, login: 'name' })
     } else {
       next()
     }
