@@ -30,7 +30,7 @@ export default {
     }
   },
   baseUrl: {
-    dev: '/api',
+    dev: 'http://localhost:8084',
     pro: '/src/server'
   }
 }
