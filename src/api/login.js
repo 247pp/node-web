@@ -9,7 +9,7 @@ export const binbgAjax = () => {
 
 export const login = (req) => {
   return axios.request({
-    url: '/home/login',
+    url: '/login/login',
     method: 'post',
     data: req
   })
