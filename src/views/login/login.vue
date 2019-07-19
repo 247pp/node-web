@@ -126,6 +126,7 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
+      console.log(process.env.VUE_APP_DEVURL, '环境地址')
       // 调用背景
       this.binbgAjax()
       // 调用是否记住密码
