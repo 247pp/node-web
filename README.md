@@ -1,16 +1,17 @@
 # node-web
 
-## Project setup
+## 下载项目依赖
 ```
 yarn install
+// 或者使用 npm i
 ```
 
-### Compiles and hot-reloads for development
+### 运行该项目工程
 ```
 yarn run serve
 ```
 
-### Compiles and minifies for production
+### 编译此项目工程
 ```
 yarn run build
 ```
@@ -21,20 +22,5 @@ node routers.js
 // .js 可加可不加
 ```
 
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Run your unit tests
-```
-yarn run test:unit
-```
-
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See [配置参考](https://cli.vuejs.org/config/).
