@@ -6,14 +6,24 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "builddev": "vue-cli-service build --mode builddev",
+    "buildtest": "vue-cli-service build --mode buildtest",
+    "buildpro": "vue-cli-service build --mode buildpro",
+    "builduat": "vue-cli-service build --mode builduat"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "iview": "^3.3.3",
+    "js-cookie": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
     "mysql": "^2.16.0",
     "request": "^2.88.0",
+    "supervisor": "^0.12.0",
     "vue": "^2.6.6",
+    "vue-i18n": "^8.10.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
@@ -27,6 +37,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "babel-plugin-import": "^1.11.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "less": "^3.0.4",

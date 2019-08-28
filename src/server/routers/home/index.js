@@ -1,15 +1,32 @@
 const express = require('express')
 const homeRouter = express.Router()
 const mysql = require('../../mysqlConnect')
-homeRouter.use('/login', (req, res) => {
-  mysql.query('SELECT * FROM loginInfo', (err, result, fields) => {
+const bodyParser = require('body-parser')
+
+homeRouter.use(bodyParser.json())
+homeRouter.use(bodyParser.urlencoded({
+  extended: false
+}))
+
+homeRouter.use('/tree', (req, res) => {
+  let sql = 'select * from test_tree_children'
+  console.log(req.body, sql)
+  mysql.query(sql, (err, result) => {
     if (err) {
       console.log('[SELECT ERROR] - ', err.message)
-      return
+      res.send({
+        data: null,
+        respDesc: err.message,
+        respCode: '8888'
+      })
+      return false
     }
-    console.log(result[0].uid)
+    res.send({
+      data: result,
+      respDesc: '测试成功',
+      respCode: '0000'
+    })
   })
-  res.send('路由分开写')
 })
 
 module.exports = homeRouter

@@ -72,7 +72,7 @@ module.exports = {
   devServer: {
     open: process.platform === 'darwin',
     host: 'localhost',
-    port: 8080,
+    port: 8083,
     https: false,
     hotOnly: false,
     proxy: { // 配置跨域

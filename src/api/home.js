@@ -1,8 +1,8 @@
 import axios from '@/libs/api.request'
 
-export const qryBankAccount = (req) => {
+export const homeTree = (req) => {
   return axios.request({
-    url: '/qryAccoutService',
+    url: '/home/tree',
     method: 'post',
     data: req
   })
