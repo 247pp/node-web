@@ -22,13 +22,12 @@ node routers.js
 ```
 
 ## 新建该数据库 & 新建login
-```
-建立对应表对应字段
-```
-#详细数据库链接请参考该文件
+>详细数据库链接请参考该文件
 [打开](https://github.com/247pp/node-web/blob/master/src/server/mysqlConnect.js)
 
 ![avatar](./src/assets/sql_join.jpg)
+
+>建立对应表对应字段
 
 ![avatar](./src/assets/mysql_img.jpg)
 
