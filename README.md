@@ -25,11 +25,11 @@ node routers.js
 >详细数据库链接请参考该文件
 [打开](https://github.com/247pp/node-web/blob/master/src/server/mysqlConnect.js)
 
-![avatar](./src/assets/sql_join.jpg)
+![avatar](https://github.com/247pp/node-web/blob/master/src/assets/sql_join.jpg)
 
 >建立对应表对应字段
 
-![avatar](./src/assets/mysql_img.jpg)
+![avatar](https://github.com/247pp/node-web/blob/master/src/assets/mysql_img.jpg)
 
 ### Customize configuration
 See [配置参考](https://cli.vuejs.org/config/).
