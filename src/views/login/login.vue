@@ -65,7 +65,6 @@ export default {
     // 调取bin网站的背景图片
     binbgAjax () {
       binbgAjax().then((res) => {
-        console.log(res, '登录界面')
         if (res.data.respCode === '0000') {
           this.BGIMG = `https://cn.bing.com/${res.data.data.images[0].url}`
           return false
@@ -112,7 +111,6 @@ export default {
       })
     },
     checkoutPassword () {
-      console.log(localStorage, '查询本地缓存')
       if (localStorage.checkoutUser) {
         let userInfo = JSON.parse(localStorage.checkoutUser)
         this.loginParams.username = userInfo.username

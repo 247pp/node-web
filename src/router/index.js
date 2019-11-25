@@ -29,7 +29,6 @@ router.beforeEach((to, from, next) => {
       next()
     }
   }
-  console.log(to, from, '路由守卫')
 })
 
 router.afterEach(route => {
