@@ -33,6 +33,7 @@ import 'iview/dist/styles/iview.css'
 import '@/libs/api.style.less'
 import './index.less'
 import './components/windowcss/index.less'
+import '@/styles/index.less'
 
 // 引入iview组件库
 Vue.use(iView)
